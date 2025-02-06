@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors"); 
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const shipmentRoutes = require("./routes/shipmentRoutes");
@@ -6,6 +7,7 @@ const shipmentRoutes = require("./routes/shipmentRoutes");
 dotenv.config();
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 mongoose
