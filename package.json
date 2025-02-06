@@ -1,17 +1,26 @@
 {
   "name": "cargo-shipment-tracker-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/app.js",
+  
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "cargo",
+    "shipment",
+    "tracker",
+    "backend"
+  ],
+  "author": "Your Name",
   "license": "ISC",
-  "description": "",
+  "description": "Backend for Cargo Shipment Tracker application",
   "dependencies": {
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "mongoose": "^8.10.0"
+    "mongoose": "^8.10.0",
+    "nodemon": "^3.1.9"
   }
 }

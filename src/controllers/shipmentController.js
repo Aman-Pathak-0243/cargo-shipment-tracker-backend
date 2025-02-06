@@ -11,7 +11,7 @@ exports.getAllShipments = async (req, res) => {
 
 exports.getShipmentById = async (req, res) => {
   try {
-    const shipment = await Shipment.findById(req.params.id);
+    const shipment = await Shipment.findOne({ containerId: req.params.id });
     if (!shipment)
       return res.status(404).json({ message: "Shipment not found" });
     res.json(shipment);
@@ -39,7 +39,7 @@ exports.createShipment = async (req, res) => {
 
 exports.updateShipmentLocation = async (req, res) => {
   try {
-    const shipment = await Shipment.findById(req.params.id);
+    const shipment = await Shipment.findOne({ containerId: req.params.id });
     if (!shipment)
       return res.status(404).json({ message: "Shipment not found" });
     shipment.currentLocation = req.body.currentLocation;
@@ -52,7 +52,7 @@ exports.updateShipmentLocation = async (req, res) => {
 
 exports.getShipmentETA = async (req, res) => {
   try {
-    const shipment = await Shipment.findById(req.params.id);
+    const shipment = await Shipment.findOne({ containerId: req.params.id });
     if (!shipment)
       return res.status(404).json({ message: "Shipment not found" });
     res.json({ currentETA: shipment.currentETA });

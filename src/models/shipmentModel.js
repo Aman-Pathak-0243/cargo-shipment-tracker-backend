@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const shipmentSchema = new mongoose.Schema({
-  containerId: { type: String, required: true },
+  containerId: { type: String, required: true, unique: true },
   route: { type: [String], required: true },
   currentLocation: { type: String, required: true },
   currentETA: { type: Date, required: true },
